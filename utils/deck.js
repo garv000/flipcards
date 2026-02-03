@@ -1,0 +1,45 @@
+const suits = ["spades", "hearts", "diamonds", "clubs"];
+
+const ranks = [
+  { label: "A", value: 1 },
+  { label: "2", value: 2 },
+  { label: "3", value: 3 },
+  { label: "4", value: 4 },
+  { label: "5", value: 5 },
+  { label: "6", value: 6 },
+  { label: "7", value: 7 },
+  { label: "8", value: 8 },
+  { label: "9", value: 9 },
+  { label: "10", value: 10 },
+  { label: "J", value: 11 },
+  { label: "Q", value: 12 },
+  { label: "K", value: 13 },
+];
+
+export function generateDeck() {
+  const deck = [];
+
+  suits.forEach((suit) => {
+    ranks.forEach((rank) => {
+      deck.push({
+        id: `${suit}-${rank.label}`,
+        suit,
+        rank: rank.label,
+        value: rank.value,
+        color: suit === "hearts" || suit === "diamonds" ? "red" : "black",
+      });
+    });
+  });
+
+  return shuffle(deck);
+}
+
+// Fisher–Yates Shuffle (REAL shuffle, not random sort)
+function shuffle(array) {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
