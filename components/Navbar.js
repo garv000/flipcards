@@ -15,7 +15,7 @@ const Navbar = () => {
     }
   return (
     <nav className='top-0 left-0 fixed w-full h-16 bg-white/10 border-white/10 border-b backdrop-blur-sm flex items-center px-8 text-white z-100'>
-      <h1 className='text-2xl font-bold'><Link href={"/"} className='flex items-center gap-2'><Image src={"/images/logo.png"} alt='Logo' width={32} height={32} className='rounded-lg'></Image> <span>FlipCards</span></Link></h1>
+      <h1 className='text-2xl font-extrabold'><Link href={"/"} className='flex items-center gap-2'><Image src={"/images/logo.png"} alt='Logo' width={32} height={32} className='rounded-lg'></Image> <span><span className='text-black'>Flip</span><span className='text-red-700'>Cards</span></span></Link></h1>
       <button onClick={handleClick} className='ml-auto hover:bg-green-700 hover:border-green-700 border-2 border-white bg-transparent text-white font-bold py-2 px-4 rounded duration-500 transform'>Rules</button>
         {showRules && (
             <div className='fixed top-1/2 left-1/2 transform -translate-x-1/2 translate-y-1/8 bg-white text-black p-8 rounded-lg shadow-lg max-w-lg w-full z-50 bg-[url("/images/rule.jpg")] bg-cover scale-75'>
